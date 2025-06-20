@@ -6,12 +6,12 @@ tables:
 
     dimensions:
       - name: DS
-        type: date
+        type: time
         column: DS
         description: "Data snapshot date"
 
       - name: MONTH
-        type: date
+        type: time
         column: MONTH
         description: "Monthly reporting period"
 
@@ -91,22 +91,22 @@ tables:
         description: "Indicates if contract started as a free trial"
 
       - name: TERM_START_DATE
-        type: date
+        type: time
         column: TERM_START_DATE
         description: "Start date of the contract term"
 
       - name: TERM_END_DATE
-        type: date
+        type: time
         column: TERM_END_DATE
         description: "End date of the contract term"
 
       - name: CONTRACT_START_DATE
-        type: date
+        type: time
         column: CONTRACT_START_DATE
         description: "Start date of the contract"
 
       - name: CANCELLATION_DS
-        type: date
+        type: time
         column: CANCELLATION_DS
         description: "Date of cancellation (if any)"
 
@@ -116,12 +116,12 @@ tables:
         description: "Flag indicating if the subscription is in a renewal month"
 
     measures: 
-      - name: Distinct Country
+      - name: DISTINCT_COUNTRY
         sql: COUNTRY
         type: count_distinct 
         description: Total distinct Country
 
-      - name: Distinct Product Group
+      - name: DISTINCT_PRODUCT_GROUP
         sql: PRODUCT_GROUP
         type: count_distinct 
         description: Total distinct Product Group

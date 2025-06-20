@@ -131,12 +131,12 @@ tables:
         description: "Date when campaign churned"
 
     measures: 
-      - name: Distinct Product Group
+      - name: DISTINCT_PRODUCT_GROUP
         sql: PRODUCT_GROUP
         type: count_distinct 
         description: Total distinct Product Group
 
-      - name: Distinct Place type
+      - name: DISTINCT_PLACE_TYPE
         sql: PLACE_TYPE
         type: count_distinct 
         description: Total distinct Place type
