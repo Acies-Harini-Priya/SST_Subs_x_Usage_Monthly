@@ -1,6 +1,6 @@
 tables:
   - name: SUBSCRIPTION_MONTHLY_TABLE
-    sql: {{ load_sql('subscription_monthly_table') }}
+    sql: {{ load_sql('subscription_monthly') }}
     description: Details of Subscription Monthly
     public: true 
 
