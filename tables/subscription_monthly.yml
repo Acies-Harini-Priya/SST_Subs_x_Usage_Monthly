@@ -4,6 +4,11 @@ tables:
     description: Details of Subscription Monthly
     public: true 
 
+    joins:
+      - name: USAGE_MONTHLY_NEW
+        relationship: many_to_one
+        sql: "{TABLE.DS} = {USAGE_MONTHLY_NEW.DS}"
+
     dimensions:
       - name: DS
         type: time
