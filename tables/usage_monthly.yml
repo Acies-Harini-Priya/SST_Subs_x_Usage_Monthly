@@ -1,0 +1,142 @@
+tables:
+  - name: USAGE_MONTHLY_NEW
+    sql: {{ load_sql('usage_monthly_new') }}
+    description: Details of Subscription Monthly
+    public: true 
+
+    dimensions:
+      - name: DS
+        type: time
+        column: DS
+        description: "Data snapshot date"
+
+      - name: MONTH
+        type: time
+        column: MONTH
+        description: "Monthly reporting period"
+
+      - name: UNIQUE_ID
+        type: string
+        column: UNIQUE_ID
+        description: "Unique identifier combining key fields"
+
+      - name: LOCATION_ID
+        type: number
+        column: LOCATION_ID
+        description: "Location identifier"
+
+      - name: BILLING_ACCOUNT_ID
+        type: string
+        column: BILLING_ACCOUNT_ID
+        description: "Billing account ID"
+
+      - name: CONTRACT_NUMBER
+        type: string
+        column: CONTRACT_NUMBER
+        description: "Contract number"
+
+      - name: SUBSCRIPTION_NUMBER
+        type: string
+        column: SUBSCRIPTION_NUMBER
+        description: "Subscription number"
+
+      - name: CAMPAIGN_STATUS
+        type: string
+        column: CAMPAIGN_STATUS
+        description: "Current campaign status"
+
+      - name: PRODUCT_SKU
+        type: string
+        column: PRODUCT_SKU
+        description: "Product SKU code"
+
+      - name: PRODUCT_GROUP
+        type: string
+        column: PRODUCT_GROUP
+        description: "Group to which the product belongs"
+
+      - name: ADVERTISER_ID
+        type: number
+        column: ADVERTISER_ID
+        description: "Advertiser identifier"
+
+      - name: CAMPAIGN_ID
+        type: number
+        column: CAMPAIGN_ID
+        description: "Campaign identifier"
+
+      - name: CAMPAIGN_TYPE_ID
+        type: number
+        column: CAMPAIGN_TYPE_ID
+        description: "Campaign type identifier"
+
+      - name: SP_TYPE
+        type: string
+        column: SP_TYPE
+        description: "Service provider type"
+
+      - name: ADVERTISER_NAME
+        type: string
+        column: ADVERTISER_NAME
+        description: "Name of the advertiser"
+
+      - name: PLACE_TYPE
+        type: string
+        column: PLACE_TYPE
+        description: "Type of place (e.g., city, region)"
+
+      - name: CAMPAIGN_START_DATE
+        type: time
+        column: CAMPAIGN_START_DATE
+        description: "Start date of the campaign"
+
+      - name: CAMPAIGN_END_DATE
+        type: time
+        column: CAMPAIGN_END_DATE
+        description: "End date of the campaign"
+
+      - name: NUMBER_DAYS_ACTIVE
+        type: number
+        column: NUMBER_DAYS_ACTIVE
+        description: "Number of days campaign was active"
+
+      - name: NUMBER_DAYS_PAUSED
+        type: number
+        column: NUMBER_DAYS_PAUSED
+        description: "Number of days campaign was paused"
+
+      - name: NUMBER_DAYS_SUSPENDED
+        type: number
+        column: NUMBER_DAYS_SUSPENDED
+        description: "Number of days campaign was suspended"
+
+      - name: NUMBER_DAYS_CANCELLED
+        type: number
+        column: NUMBER_DAYS_CANCELLED
+        description: "Number of days campaign was cancelled"
+
+      - name: LAST_STATUS_ACTIVE_DATE
+        type: time
+        column: LAST_STATUS_ACTIVE_DATE
+        description: "Last date when campaign was active"
+
+      - name: LAST_STATUS_UPDATE_DATE
+        type: time
+        column: LAST_STATUS_UPDATE_DATE
+        description: "Last date of campaign status update"
+
+      - name: CHURN_DATE
+        type: time
+        column: CHURN_DATE
+        description: "Date when campaign churned"
+
+    measures: 
+      - name: Distinct Product Group
+        sql: PRODUCT_GROUP
+        type: count_distinct 
+        description: Total distinct Product Group
+
+      - name: Distinct Place type
+        sql: PLACE_TYPE
+        type: count_distinct 
+        description: Total distinct Place type

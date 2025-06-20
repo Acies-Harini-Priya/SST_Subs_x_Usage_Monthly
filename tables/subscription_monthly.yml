@@ -1,0 +1,127 @@
+tables:
+  - name: SUBSCRIPTION_MONTHLY_TABLE
+    sql: {{ load_sql('subscription_monthly_table') }}
+    description: Details of Subscription Monthly
+    public: true 
+
+    dimensions:
+      - name: DS
+        type: date
+        column: DS
+        description: "Data snapshot date"
+
+      - name: MONTH
+        type: date
+        column: MONTH
+        description: "Monthly reporting period"
+
+      - name: UNIQUE_ID
+        type: string
+        column: UNIQUE_ID
+        description: "Unique identifier"
+
+      - name: LOCATION_ID
+        type: number
+        column: LOCATION_ID
+        description: "Location identifier"
+
+      - name: BILLING_ACCOUNT_ID
+        type: number
+        column: BILLING_ACCOUNT_ID
+        description: "Billing account ID"
+
+      - name: CONTRACT_NUMBER
+        type: string
+        column: CONTRACT_NUMBER
+        description: "Contract number"
+
+      - name: SUBSCRIPTION_NUMBER
+        type: number
+        column: SUBSCRIPTION_NUMBER
+        description: "Subscription number"
+
+      - name: CONTRACT_STATUS
+        type: string
+        column: CONTRACT_STATUS
+        description: "Current contract status"
+
+      - name: PRODUCT_SKU
+        type: string
+        column: PRODUCT_SKU
+        description: "Product SKU code"
+
+      - name: PRODUCT_GROUP
+        type: string
+        column: PRODUCT_GROUP
+        description: "Group to which the product belongs"
+
+      - name: ADVERTISER_ID
+        type: string
+        column: ADVERTISER_ID
+        description: "Advertiser identifier"
+
+      - name: CAMPAIGN_ID
+        type: string
+        column: CAMPAIGN_ID
+        description: "Campaign identifier"
+
+      - name: ADVERTISER_NAME
+        type: string
+        column: ADVERTISER_NAME
+        description: "Name of the advertiser"
+
+      - name: COUNTRY
+        type: string
+        column: COUNTRY
+        description: "Country of operation"
+
+      - name: CONTINENT
+        type: string
+        column: CONTINENT
+        description: "Continent of operation"
+
+      - name: PLACE_TYPE
+        type: string
+        column: PLACE_TYPE
+        description: "Type of place (e.g., city, region)"
+
+      - name: CONTRACT_FREE_TRIAL
+        type: boolean
+        column: CONTRACT_FREE_TRIAL
+        description: "Indicates if contract started as a free trial"
+
+      - name: TERM_START_DATE
+        type: date
+        column: TERM_START_DATE
+        description: "Start date of the contract term"
+
+      - name: TERM_END_DATE
+        type: date
+        column: TERM_END_DATE
+        description: "End date of the contract term"
+
+      - name: CONTRACT_START_DATE
+        type: date
+        column: CONTRACT_START_DATE
+        description: "Start date of the contract"
+
+      - name: CANCELLATION_DS
+        type: date
+        column: CANCELLATION_DS
+        description: "Date of cancellation (if any)"
+
+      - name: IS_RENEWAL_MONTH
+        type: boolean
+        column: IS_RENEWAL_MONTH
+        description: "Flag indicating if the subscription is in a renewal month"
+
+    measures: 
+      - name: Distinct Country
+        sql: COUNTRY
+        type: count_distinct 
+        description: Total distinct Country
+
+      - name: Distinct Product Group
+        sql: PRODUCT_GROUP
+        type: count_distinct 
+        description: Total distinct Product Group
