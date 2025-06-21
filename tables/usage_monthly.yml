@@ -1,142 +1,142 @@
 tables:
-  - name: USAGE_MONTHLY_NEW
+  - name: usage_monthly_new
     sql: {{ load_sql('usage_monthly') }}
-    description: Details of Subscription Monthly
+    description: details of subscription monthly
     public: true 
 
     dimensions:
-      - name: DS
+      - name: ds
         type: time
-        column: DS
-        description: "Data snapshot date"
+        column: ds
+        description: "data snapshot date"
 
-      - name: MONTH
+      - name: month
         type: time
-        column: MONTH
-        description: "Monthly reporting period"
+        column: month
+        description: "monthly reporting period"
 
-      - name: UNIQUE_ID
+      - name: unique_id
         type: string
-        column: UNIQUE_ID
-        description: "Unique identifier combining key fields"
+        column: unique_id
+        description: "unique identifier combining key fields"
 
-      - name: LOCATION_ID
+      - name: location_id
         type: number
-        column: LOCATION_ID
-        description: "Location identifier"
+        column: location_id
+        description: "location identifier"
 
-      - name: BILLING_ACCOUNT_ID
+      - name: billing_account_id
         type: string
-        column: BILLING_ACCOUNT_ID
-        description: "Billing account ID"
+        column: billing_account_id
+        description: "billing account id"
 
-      - name: CONTRACT_NUMBER
+      - name: contract_number
         type: string
-        column: CONTRACT_NUMBER
-        description: "Contract number"
+        column: contract_number
+        description: "contract number"
 
-      - name: SUBSCRIPTION_NUMBER
+      - name: subscription_number
         type: string
-        column: SUBSCRIPTION_NUMBER
-        description: "Subscription number"
+        column: subscription_number
+        description: "subscription number"
 
-      - name: CAMPAIGN_STATUS
+      - name: campaign_status
         type: string
-        column: CAMPAIGN_STATUS
-        description: "Current campaign status"
+        column: campaign_status
+        description: "current campaign status"
 
-      - name: PRODUCT_SKU
+      - name: product_sku
         type: string
-        column: PRODUCT_SKU
-        description: "Product SKU code"
+        column: product_sku
+        description: "product sku code"
 
-      - name: PRODUCT_GROUP
+      - name: product_group
         type: string
-        column: PRODUCT_GROUP
-        description: "Group to which the product belongs"
+        column: product_group
+        description: "group to which the product belongs"
 
-      - name: ADVERTISER_ID
+      - name: advertiser_id
         type: number
-        column: ADVERTISER_ID
-        description: "Advertiser identifier"
+        column: advertiser_id
+        description: "advertiser identifier"
 
-      - name: CAMPAIGN_ID
+      - name: campaign_id
         type: number
-        column: CAMPAIGN_ID
-        description: "Campaign identifier"
+        column: campaign_id
+        description: "campaign identifier"
 
-      - name: CAMPAIGN_TYPE_ID
+      - name: campaign_type_id
         type: number
-        column: CAMPAIGN_TYPE_ID
-        description: "Campaign type identifier"
+        column: campaign_type_id
+        description: "campaign type identifier"
 
-      - name: SP_TYPE
+      - name: sp_type
         type: string
-        column: SP_TYPE
-        description: "Service provider type"
+        column: sp_type
+        description: "service provider type"
 
-      - name: ADVERTISER_NAME
+      - name: advertiser_name
         type: string
-        column: ADVERTISER_NAME
-        description: "Name of the advertiser"
+        column: advertiser_name
+        description: "name of the advertiser"
 
-      - name: PLACE_TYPE
+      - name: place_type
         type: string
-        column: PLACE_TYPE
-        description: "Type of place (e.g., city, region)"
+        column: place_type
+        description: "type of place (e.g., city, region)"
 
-      - name: CAMPAIGN_START_DATE
+      - name: campaign_start_date
         type: time
-        column: CAMPAIGN_START_DATE
-        description: "Start date of the campaign"
+        column: campaign_start_date
+        description: "start date of the campaign"
 
-      - name: CAMPAIGN_END_DATE
+      - name: campaign_end_date
         type: time
-        column: CAMPAIGN_END_DATE
-        description: "End date of the campaign"
+        column: campaign_end_date
+        description: "end date of the campaign"
 
-      - name: NUMBER_DAYS_ACTIVE
+      - name: number_days_active
         type: number
-        column: NUMBER_DAYS_ACTIVE
-        description: "Number of days campaign was active"
+        column: number_days_active
+        description: "number of days campaign was active"
 
-      - name: NUMBER_DAYS_PAUSED
+      - name: number_days_paused
         type: number
-        column: NUMBER_DAYS_PAUSED
-        description: "Number of days campaign was paused"
+        column: number_days_paused
+        description: "number of days campaign was paused"
 
-      - name: NUMBER_DAYS_SUSPENDED
+      - name: number_days_suspended
         type: number
-        column: NUMBER_DAYS_SUSPENDED
-        description: "Number of days campaign was suspended"
+        column: number_days_suspended
+        description: "number of days campaign was suspended"
 
-      - name: NUMBER_DAYS_CANCELLED
+      - name: number_days_cancelled
         type: number
-        column: NUMBER_DAYS_CANCELLED
-        description: "Number of days campaign was cancelled"
+        column: number_days_cancelled
+        description: "number of days campaign was cancelled"
 
-      - name: LAST_STATUS_ACTIVE_DATE
+      - name: last_status_active_date
         type: time
-        column: LAST_STATUS_ACTIVE_DATE
-        description: "Last date when campaign was active"
+        column: last_status_active_date
+        description: "last date when campaign was active"
 
-      - name: LAST_STATUS_UPDATE_DATE
+      - name: last_status_update_date
         type: time
-        column: LAST_STATUS_UPDATE_DATE
-        description: "Last date of campaign status update"
+        column: last_status_update_date
+        description: "last date of campaign status update"
 
-      - name: CHURN_DATE
+      - name: churn_date
         type: time
-        column: CHURN_DATE
-        description: "Date when campaign churned"
+        column: churn_date
+        description: "date when campaign churned"
 
     measures: 
-      - name: DISTINCT_PRODUCT_GROUP
-        sql: PRODUCT_GROUP
+      - name: distinct_product_group
+        sql: product_group
         type: count_distinct 
-        description: Total distinct Product Group
+        description: total distinct product group
 
-      - name: DISTINCT_PLACE_TYPE
-        sql: PLACE_TYPE
+      - name: distinct_place_type
+        sql: place_type
         type: count_distinct 
-        description: Total distinct Place type
+        description: total distinct place type

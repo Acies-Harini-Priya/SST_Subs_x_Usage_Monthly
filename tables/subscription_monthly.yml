@@ -1,132 +1,132 @@
 tables:
-  - name: SUBSCRIPTION_MONTHLY_TABLE
+  - name: subscription_monthly_table
     sql: {{ load_sql('subscription_monthly') }}
-    description: Details of Subscription Monthly
+    description: details of subscription monthly
     public: true 
 
     joins:
-      - name: USAGE_MONTHLY_NEW
+      - name: usage_monthly_new
         relationship: many_to_one
-        sql: "{TABLE.DS} = {USAGE_MONTHLY_NEW.DS}"
+        sql: "{table.ds} = {usage_monthly_new.ds}"
 
     dimensions:
-      - name: DS
+      - name: ds
         type: time
-        column: DS
-        description: "Data snapshot date"
+        column: ds
+        description: "data snapshot date"
 
-      - name: MONTH
+      - name: month
         type: time
-        column: MONTH
-        description: "Monthly reporting period"
+        column: month
+        description: "monthly reporting period"
 
-      - name: UNIQUE_ID
+      - name: unique_id
         type: string
-        column: UNIQUE_ID
-        description: "Unique identifier"
+        column: unique_id
+        description: "unique identifier"
 
-      - name: LOCATION_ID
+      - name: location_id
         type: number
-        column: LOCATION_ID
-        description: "Location identifier"
+        column: location_id
+        description: "location identifier"
 
-      - name: BILLING_ACCOUNT_ID
+      - name: billing_account_id
         type: number
-        column: BILLING_ACCOUNT_ID
-        description: "Billing account ID"
+        column: billing_account_id
+        description: "billing account id"
 
-      - name: CONTRACT_NUMBER
+      - name: contract_number
         type: string
-        column: CONTRACT_NUMBER
-        description: "Contract number"
+        column: contract_number
+        description: "contract number"
 
-      - name: SUBSCRIPTION_NUMBER
+      - name: subscription_number
         type: number
-        column: SUBSCRIPTION_NUMBER
-        description: "Subscription number"
+        column: subscription_number
+        description: "subscription number"
 
-      - name: CONTRACT_STATUS
+      - name: contract_status
         type: string
-        column: CONTRACT_STATUS
-        description: "Current contract status"
+        column: contract_status
+        description: "current contract status"
 
-      - name: PRODUCT_SKU
+      - name: product_sku
         type: string
-        column: PRODUCT_SKU
-        description: "Product SKU code"
+        column: product_sku
+        description: "product sku code"
 
-      - name: PRODUCT_GROUP
+      - name: product_group
         type: string
-        column: PRODUCT_GROUP
-        description: "Group to which the product belongs"
+        column: product_group
+        description: "group to which the product belongs"
 
-      - name: ADVERTISER_ID
+      - name: advertiser_id
         type: string
-        column: ADVERTISER_ID
-        description: "Advertiser identifier"
+        column: advertiser_id
+        description: "advertiser identifier"
 
-      - name: CAMPAIGN_ID
+      - name: campaign_id
         type: string
-        column: CAMPAIGN_ID
-        description: "Campaign identifier"
+        column: campaign_id
+        description: "campaign identifier"
 
-      - name: ADVERTISER_NAME
+      - name: advertiser_name
         type: string
-        column: ADVERTISER_NAME
-        description: "Name of the advertiser"
+        column: advertiser_name
+        description: "name of the advertiser"
 
-      - name: COUNTRY
+      - name: country
         type: string
-        column: COUNTRY
-        description: "Country of operation"
+        column: country
+        description: "country of operation"
 
-      - name: CONTINENT
+      - name: continent
         type: string
-        column: CONTINENT
-        description: "Continent of operation"
+        column: continent
+        description: "continent of operation"
 
-      - name: PLACE_TYPE
+      - name: place_type
         type: string
-        column: PLACE_TYPE
-        description: "Type of place (e.g., city, region)"
+        column: place_type
+        description: "type of place (e.g., city, region)"
 
-      - name: CONTRACT_FREE_TRIAL
+      - name: contract_free_trial
         type: boolean
-        column: CONTRACT_FREE_TRIAL
-        description: "Indicates if contract started as a free trial"
+        column: contract_free_trial
+        description: "indicates if contract started as a free trial"
 
-      - name: TERM_START_DATE
+      - name: term_start_date
         type: time
-        column: TERM_START_DATE
-        description: "Start date of the contract term"
+        column: term_start_date
+        description: "start date of the contract term"
 
-      - name: TERM_END_DATE
+      - name: term_end_date
         type: time
-        column: TERM_END_DATE
-        description: "End date of the contract term"
+        column: term_end_date
+        description: "end date of the contract term"
 
-      - name: CONTRACT_START_DATE
+      - name: contract_start_date
         type: time
-        column: CONTRACT_START_DATE
-        description: "Start date of the contract"
+        column: contract_start_date
+        description: "start date of the contract"
 
-      - name: CANCELLATION_DS
+      - name: cancellation_ds
         type: time
-        column: CANCELLATION_DS
-        description: "Date of cancellation (if any)"
+        column: cancellation_ds
+        description: "date of cancellation (if any)"
 
-      - name: IS_RENEWAL_MONTH
+      - name: is_renewal_month
         type: boolean
-        column: IS_RENEWAL_MONTH
-        description: "Flag indicating if the subscription is in a renewal month"
+        column: is_renewal_month
+        description: "flag indicating if the subscription is in a renewal month"
 
     measures: 
-      - name: DISTINCT_COUNTRY
-        sql: COUNTRY
+      - name: distinct_country
+        sql: country
         type: count_distinct 
-        description: Total distinct Country
+        description: total distinct country
 
-      - name: DISTINCT_PRODUCT_GROUP
-        sql: PRODUCT_GROUP
+      - name: distinct_product_group
+        sql: product_group
         type: count_distinct 
-        description: Total distinct Product Group
+        description: total distinct product group
